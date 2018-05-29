@@ -188,7 +188,7 @@ links_title: Links
 links_layout: block
 #links_layout: inline
 links:
-  v-charts: https://v-charts.js.org
+  v-charts 图表组件: https://v-charts.js.org
 
 # Sidebar Avatar
 avatar:
