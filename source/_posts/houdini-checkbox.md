@@ -1,6 +1,5 @@
 ---
 title: houdini 实战：自定义 checkbox
-date: 2018-05-20
 category: css
 tag: houdini
 ---
