@@ -180,7 +180,7 @@ social_icons:
 # Usage: `permalink || title`
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the title and aria-label name.
-#github_banner: https://github.com/yourname || Follow me on GitHub
+github_banner: https://github.com/xiguaxigua || Follow me on GitHub
 
 # Blog rolls
 links_icon: link
@@ -330,8 +330,8 @@ post_copyright:
 # Post edit
 # Dependencies: https://github.com/hexojs/hexo-deployer-git
 post_edit:
-  enable: false
-  url: https://github.com/theme-next/theme-next.org/_posts/tree/master/ # Link for view source.
+  enable: true
+  url: https://github.com/xiguaxigua/xiguaxigua.github.io/edit/dev/source/_posts/ # Link for view source.
 # url: https://github.com/theme-next/theme-next.org/_posts/edit/master/ # Link for fork & edit.
 
 
