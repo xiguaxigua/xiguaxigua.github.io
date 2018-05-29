@@ -37,7 +37,7 @@ class Checkbox {
     return ['--color']
   }
   paint (ctx, size, styleMap, args) {
-    // ...
+    // ......
   }
 }
 registerPaint('checkbox', Checkbox)
