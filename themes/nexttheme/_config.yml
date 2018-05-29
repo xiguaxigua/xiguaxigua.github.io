@@ -187,8 +187,8 @@ links_icon: link
 links_title: Links
 links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  v-charts: https://v-charts.js.org
 
 # Sidebar Avatar
 avatar:
