@@ -85,6 +85,9 @@
 {% if theme.favicon.apple_touch_icon %}
   <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for(theme.favicon.apple_touch_icon) }}?v={{ version }}">
 {% endif %}
+{% if theme.favicon.large %}
+  <link rel="icon" type="image/png" sizes="64x64" href="{{ url_for(theme.favicon.large) }}?v={{ version }}">
+{% endif %}
 {% if theme.favicon.medium %}
   <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for(theme.favicon.medium) }}?v={{ version }}">
 {% endif %}
