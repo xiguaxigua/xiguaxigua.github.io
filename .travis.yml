@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- stable
+branches:
+  only:
+  - dev
+install:
+  - npm i
+script:
+  - npm run generate
+after_success:
+  - sh deploy.sh

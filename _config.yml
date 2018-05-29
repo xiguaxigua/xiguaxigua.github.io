@@ -70,3 +70,4 @@ theme: nexttheme
 deploy:
   type: git
   repo: git@github.com:xiguaxigua/xiguaxigua.github.io.git
+  branch: master
