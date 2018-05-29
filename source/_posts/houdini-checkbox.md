@@ -6,6 +6,7 @@ tag: houdini
 ---
 
 在 html 中使用 checkbox 时，可能会由于默认 checkbox 的样式不符合页面风格，或是在不同浏览器样式不同（例如在设置宽高时样式不统一）而想办法自定义 checkbox。
+
 <!-- more -->
 
 常见的自定义 checkbox 的方法有：
