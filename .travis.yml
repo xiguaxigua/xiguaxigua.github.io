@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-- stable
+  - stable
 branches:
   only:
   - dev
 install:
-  - npm i
+  - yarn
 script:
   - npm run generate
 after_success:
