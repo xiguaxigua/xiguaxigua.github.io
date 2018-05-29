@@ -1,5 +1,6 @@
 ---
 title: Hello World2
+date: 2018-01-01
 categories: 前端
 tags: fe
 ---
