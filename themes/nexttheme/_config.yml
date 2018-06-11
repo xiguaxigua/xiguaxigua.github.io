@@ -191,6 +191,7 @@ links_layout: block
 #links_layout: inline
 links:
   v-charts 图表组件: https://v-charts.js.org
+  numerify 数值格式工具: http://daxigua.me/numerify
 
 # Sidebar Avatar
 avatar:
