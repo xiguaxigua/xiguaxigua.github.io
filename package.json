@@ -4,6 +4,7 @@
   "description": "博客模板",
   "main": "index.js",
   "scripts": {
+    "dev": "hexo server",
     "generate": "hexo generate"
   },
   "repository": {

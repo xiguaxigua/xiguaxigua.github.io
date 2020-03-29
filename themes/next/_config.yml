@@ -205,7 +205,11 @@ links_settings:
 
 links:
   v-charts 图表组件: https://v-charts.js.org
-  numerify 数值格式工具: http://daxigua.me/numerify
+  numerify 数值格式工具: https://daxigua.me/numerify
+  mockapp mock数据工具: https://github.com/xiguaxigua/mockapp
+  tinyapp 图片压缩工具: https://github.com/xiguaxigua/tinyapp
+  figure-bed 图床服务: https://github.com/xiguaxigua/figure-bed
+  demo-block 文档code工具: https://github.com/xiguaxigua/vuepress-plugin-demo-block
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
