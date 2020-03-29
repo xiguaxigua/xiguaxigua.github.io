@@ -1,14 +1,14 @@
 # 网站配置
-title: Blog
-subtitle: 'subtitle'
-description: 'description'
-keywords: keywords
-author: author
+title: xiguaxigua's Blog
+subtitle: Record interesting things
+description: 
+keywords: 
+author: xiguaxigua
 language: zh-CN
-timezone: ''
+timezone: 
 
 # 链接
-url: http://yoursite.com
+url: https://daxigua.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

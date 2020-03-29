@@ -44,10 +44,10 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
-  safari_pinned_tab: /images/logo.svg
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  # apple_touch_icon: /images/apple-touch-icon-next.png
+  # safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
   #ms_browserconfig: /images/browserconfig.xml
 
@@ -180,10 +180,10 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/yourname || github
-  E-Mail: mailto:yourname@gmail.com || envelope
-  Codepen: https://weibo.com/yourname || codepen
-  SegmentFault: https://stackoverflow.com/yourname || stack-overflow
+  GitHub: https://github.com/xiguaxigua || github
+  Codepen: https://codepen.io/xiguaxigua || codepen
+  SegmentFault: https://segmentfault.com/u/xiguaxigua888 || user
+  E-Mail: mailto:xiguaxigua888@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -204,7 +204,8 @@ links_settings:
   layout: block
 
 links:
-  #Title: http://yoursite.com
+  v-charts 图表组件: https://v-charts.js.org
+  numerify 数值格式工具: http://daxigua.me/numerify
 
 # Table of Contents in the Sidebar
 # Front-matter variable (unsupport wrap expand_all).
@@ -647,12 +648,12 @@ livere_uid: # <your_uid>
 # Gitalk
 # For more information: https://gitalk.github.io, https://github.com/gitalk/gitalk
 gitalk:
-  enable: false
-  github_id:  # GitHub repo owner
-  repo:  # Repository name to store issues
-  client_id:  # GitHub Application Client ID
-  client_secret:  # GitHub Application Client Secret
-  admin_user:  # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
+  enable: true
+  github_id: xiguaxigua # GitHub repo owner
+  repo: xiguaxigua.github.io # Repository name to store issues
+  client_id: bfdec1ee51075e81b4bc # GitHub Application Client ID
+  client_secret: 7cdb42ded87c6dd5f25e17ccab51e27a38148414 # GitHub Application Client Secret
+  admin_user: xiguaxigua # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # Gitalk's display language depends on user's browser or system environment
   # If you want everyone visiting your site to see a uniform language, you can set a force language value
@@ -690,7 +691,7 @@ google_analytics:
   only_pageview: false
 
 # Baidu Analytics
-baidu_analytics: # <app_id>
+baidu_analytics: 34984277591e72233f0ceca02f6e7fe8 # <app_id>
 
 # Growingio Analytics
 growingio_analytics: # <project_id>
