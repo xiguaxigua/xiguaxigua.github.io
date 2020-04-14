@@ -24,6 +24,7 @@
   "dependencies": {
     "hexo": "^4.2.0",
     "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-calendar": "theme-next/theme-next-calendar",
     "hexo-generator-category": "^1.0.0",
     "hexo-generator-index": "^1.0.0",
     "hexo-generator-search": "^2.4.0",
