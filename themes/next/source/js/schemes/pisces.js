@@ -8,7 +8,7 @@ var Affix = {
     this.unpin = null;
     this.pinnedOffset = null;
     this.checkPosition();
-    // window.addEventListener('scroll', this.checkPosition.bind(this));
+    window.addEventListener('scroll', this.checkPosition.bind(this));
     window.addEventListener('click', this.checkPositionWithEventLoop.bind(this));
     window.matchMedia('(min-width: 992px)').addListener(event => {
       if (event.matches) {
