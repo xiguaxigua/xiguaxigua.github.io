@@ -56,7 +56,7 @@
   <meta name="baidu-site-verification" content="{{ theme.baidu_site_verification }}">
 {%- endif %}
 
-<link rel="stylesheet" href="{{ url_for(theme.css) }}/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/figure-bed@0.0.36/images/main.css">
 
 {{ next_font() }}
 
