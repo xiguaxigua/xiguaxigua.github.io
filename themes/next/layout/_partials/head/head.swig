@@ -5,7 +5,7 @@
 
 {%- if theme.vuep.enable %}
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuep-patch@0.0.1/dist/vuep.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.26/images/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.44/images/vue-patch.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuep-patch@0.0.1/dist/vuep.min.js"></script>
   {%- if theme.vuep.es6 %}
     <script src="//cdn.jsdelivr.net/npm/babel-standalone/babel.min.js"></script>
@@ -14,7 +14,7 @@
     Vue.use(Vuep)
     window.addEventListener('DOMContentLoaded', () => {
       new window.Vue({
-        delimiters: ['${', '}']
+        delimiters: ['#{', '}']
       }).$mount('.post-body')
     })
   </script>

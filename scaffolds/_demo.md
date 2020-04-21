@@ -20,7 +20,7 @@ test
 
 <script v-pre type="text/x-template" id="example">
 <template>
-  <div>Hello, ${ name }!</div>
+  <div>Hello, #{ name }!</div>
 </template>
 
 <script>
