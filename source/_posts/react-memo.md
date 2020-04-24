@@ -162,6 +162,8 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 此时切换 state 不会触发 Foo 组件的 render。
 
+如果需要在循环中使用索引，可以再增加一层 cache ：
+
 <iframe height="300" style="width: 100%;" scrolling="no" title="func props" src="https://codepen.io/xiguaxigua/embed/QWjdOgo?height=300&theme-id=26449&default-tab=js,result" frameborder="no" allowtransparency="true" allowfullscreen="true" loading="lazy">
   See the Pen <a href='https://codepen.io/xiguaxigua/pen/QWjdOgo'>func props</a> by xiguaxigua
   (<a href='https://codepen.io/xiguaxigua'>@xiguaxigua</a>) on <a href='https://codepen.io'>CodePen</a>.
@@ -231,7 +233,3 @@ ReactDOM.render(<App />, document.getElementById('app'))
 实际上，在 react 的文档中，涉及 memo 的地方，字里行间都能够体会到 react 是不赞成在不需要性能优化时进行性能优化的，react 官方对 JS 引擎的执行效率，以及 fiber 架构有着足够的信心，对一些“不需要”进行的 render 不是那么看重，反而进行了 cache 实际上会反向对内存产生影响。而 vue 则更偏向于隐式的将问题处理掉，从笔者的角度来看，vue 在这一点上做的更“接地气”一些。
 
 “vue 和 react 的区别是什么”，很多面试官都喜欢问这样的问题，如果从这篇文章上来看，vue 更多的是面向“内存”的框架，而 react，则是面向“CPU”的框架。
-
-## 循环过程中如何需要使用 index 怎么办
-
-上面介绍的方法不适用于需要使用在运行时处理索引的情况，如果要避免这种情况下的render，可以使用高阶组件，将索引使用的逻辑封装在高阶组件中，实际的 Foo 组件就可以避免 render 了。
