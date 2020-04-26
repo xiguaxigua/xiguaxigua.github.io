@@ -42,6 +42,11 @@ comments: false
 
 简介：Demo Block 用于帮助你在编写文档时增加 vue ,react, 原生js 示例。在编写组件文档时，通常需要在文档上增加一些相关的示例，这些示例通常可以使用 JSFiddle 或 Codepen 的 Iframe 实现，但是维护成本会相对比较高，使用 Demo Block 可以快速的增加示例，并且可以很方便的修改。
 
+## file-transfer 文件传输助手
+
+> [地址](https://github.com/xiguaxigua/file-transfer)
+
+简介：用于局域网内文件上传场景，开启 app 后会在电脑上启动一个上传服务，其他设备扫码或者访问 app 上显示的网址即可上传。
 
 ## wiki 问题记录
 
