@@ -18,3 +18,9 @@ node.scaleX = -1;
 // 垂直翻转
 node.scaleY = -1;
 ```
+
+# 点击穿透
+
+```js
+node._touchListener.setSwallowTouches(false)
+```
