@@ -153,7 +153,7 @@ tag: js
 
 ### 页面样式
 
-<img alt="页面样式" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.41/images/Xnip2020-04-20_11-57-44.png" style="width:100%;max-width:1000px;" />
+<img alt="页面样式" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.52/images/global.png" style="width:100%;max-width:1000px;" />
 
 ### 数据流
 
