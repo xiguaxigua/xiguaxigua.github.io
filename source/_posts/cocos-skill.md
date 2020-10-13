@@ -28,31 +28,31 @@ node._touchListener.setSwallowTouches(false)
 # 获取图片像素点信息
 
 ```
-    const node = new cc.Node();
-    node.parent = this.target.node; // 截当前图
-    const camera = node.addComponent(cc.Camera);
+const node = new cc.Node();
+node.parent = this.target.node; // 截当前图
+const camera = node.addComponent(cc.Camera);
 
-    node.x = this.target.node.x;
-    node.y = this.target.node.y;
+node.x = this.target.node.x;
+node.y = this.target.node.y;
 
-    camera.cullingMask = 0xffffffff;
+camera.cullingMask = 0xffffffff;
 
 
-    const texture = new cc.RenderTexture();
-    const gl = cc.game._renderContext;
+const texture = new cc.RenderTexture();
+const gl = cc.game._renderContext;
 
-    texture.initWithSize(
-      this.target.node.width,
-      this.target.node.height,
-      gl.STENCIL_INDEX8
-    );
-    camera.targetTexture = texture;
+texture.initWithSize(
+  this.target.node.width,
+  this.target.node.height,
+  gl.STENCIL_INDEX8
+);
+camera.targetTexture = texture;
 
-    camera.render(undefined);
+camera.render(undefined);
 
-    const data = texture.readPixels();
+const data = texture.readPixels();
 
-    console.log(data);
+console.log(data);
 ```
 
 
