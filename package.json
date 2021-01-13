@@ -1,7 +1,7 @@
 {
   "name": "blog-template",
   "version": "1.0.0",
-  "description": "博客模板",
+  "description": "博客",
   "main": "index.js",
   "scripts": {
     "dev": "hexo server",
