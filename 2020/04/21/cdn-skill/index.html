@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/vuep-patch@0.0.1/dist/vuep.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.44/images/vue-patch.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuep-patch@0.0.1/dist/vuep.min.js"></script>
+  <script>
+    Vue.use(Vuep)
+    window.addEventListener('DOMContentLoaded', () => {
+      new window.Vue({
+        delimiters: ['#{', '}']
+      }).$mount('.post-body')
+    })
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/figure-bed@0.0.36/images/main.css">
+
+
+<link rel="stylesheet" href="https:////cdn.jsdelivr.net/npm/font-awesome@4/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"daxigua.me","root":"/","scheme":"Gemini","version":"7.7.2","exturl":false,"sidebar":{"position":"left","display":"hide","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":false,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":null,"post_header":null,"post_body":null,"coll_header":null,"sidebar":null}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="提到七牛，前端同学通常想到的是使用七牛存储图片和一些静态资源，用于网络加速，实际上，我们能够利用七牛进行的优化和开发的功能还有很多，本文简单列举几项使用七牛时技巧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端如何更好的使用 qiniu">
+<meta property="og:url" content="https://daxigua.me/2020/04/21/cdn-skill/index.html">
+<meta property="og:site_name" content="xiguaxigua&#39;s Blog">
+<meta property="og:description" content="提到七牛，前端同学通常想到的是使用七牛存储图片和一些静态资源，用于网络加速，实际上，我们能够利用七牛进行的优化和开发的功能还有很多，本文简单列举几项使用七牛时技巧。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-21T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-13T13:12:51.124Z">
+<meta property="article:author" content="xiguaxigua">
+<meta property="article:tag" content="skill">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://daxigua.me/2020/04/21/cdn-skill/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>前端如何更好的使用 qiniu | xiguaxigua's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      if (window.location.hostname === 'localhost') return
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?34984277591e72233f0ceca02f6e7fe8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">xiguaxigua's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">Record interesting things</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://daxigua.me/2020/04/21/cdn-skill/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="xiguaxigua">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiguaxigua's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端如何更好的使用 qiniu
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-04-21 00:00:00" itemprop="dateCreated datePublished" datetime="2020-04-21T00:00:00+00:00">2020-04-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cdn/" itemprop="url" rel="index"><span itemprop="name">cdn</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>提到七牛，前端同学通常想到的是使用七牛存储图片和一些静态资源，用于网络加速，实际上，我们能够利用七牛进行的优化和开发的功能还有很多，本文简单列举几项使用七牛时技巧。</p>
+<a id="more"></a>
+
+<h1 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h1><h2 id="设备自适应"><a href="#设备自适应" class="headerlink" title="设备自适应"></a>设备自适应</h2><p>当前移动端设备通常都是支持高分屏的，但首次加载图片时，加载一张低分辨率的图会让用户拥有更好的使用体验。</p>
+<p>七牛本身提供根据通过 url参数 来获取不同尺寸图片的方式，利用这种方式我们便可以实现上述的功能：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">imageView2&#x2F;&#123;mode&#125;&#x2F;w&#x2F;&#123;LongEdge&#125;</span><br><span class="line">                 &#x2F;h&#x2F;&#123;ShortEdge&#125;</span><br><span class="line">                 &#x2F;format&#x2F;&#123;Format&#125;</span><br><span class="line">                 &#x2F;interlace&#x2F;&#123;Interlace&#125;</span><br><span class="line">                 &#x2F;q&#x2F;&#123;Quality&#125;</span><br><span class="line">                 &#x2F;colors&#x2F;&#123;colors&#125;</span><br><span class="line">                 &#x2F;ignore-error&#x2F;&#123;ignoreError&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中 {mode} 分为如下几种情况：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/0/w/{LongEdge}/h/{ShortEdge}</td>
+<td>限定缩略图的长边最多为{LongEdge}，短边最多为{ShortEdge}，进行等比缩放，不裁剪。如果只指定 w 参数则表示限定长边（短边自适应），只指定 h 参数则表示限定短边（长边自适应）。</td>
+</tr>
+<tr>
+<td>/1/w/{Width}/h/{Height}</td>
+<td>限定缩略图的宽最少为{Width}，高最少为{Height}，进行等比缩放，居中裁剪。转后的缩略图通常恰好是 {Width}x{Height} 的大小（有一个边缩放的时候会因为超出矩形框而被裁剪掉多余部分）。如果只指定 w 参数或只指定 h 参数，代表限定为长宽相等的正方图。</td>
+</tr>
+<tr>
+<td>/2/w/{Width}/h/{Height}</td>
+<td>限定缩略图的宽最多为{Width}，高最多为{Height}，进行等比缩放，不裁剪。如果只指定 w 参数则表示限定宽（高自适应），只指定 h 参数则表示限定高（宽自适应）。它和模式0类似，区别只是限定宽和高，不是限定长边和短边。从应用场景来说，模式0适合移动设备上做缩略图，模式2适合PC上做缩略图。</td>
+</tr>
+<tr>
+<td>/3/w/{Width}/h/{Height}</td>
+<td>限定缩略图的宽最少为{Width}，高最少为{Height}，进行等比缩放，不裁剪。如果只指定 w 参数或只指定 h 参数，代表长宽限定为同样的值。你可以理解为模式1是模式3的结果再做居中裁剪得到的。</td>
+</tr>
+<tr>
+<td>/4/w/{LongEdge}/h/{ShortEdge}</td>
+<td>限定缩略图的长边最少为{LongEdge}，短边最少为{ShortEdge}，进行等比缩放，不裁剪。如果只指定 w 参数或只指定 h 参数，表示长边短边限定为同样的值。这个模式很适合在手持设备做图片的全屏查看（把这里的长边短边分别设为手机屏幕的分辨率即可），生成的图片尺寸刚好充满整个屏幕（某一个边可能会超出屏幕）。</td>
+</tr>
+<tr>
+<td>/5/w/{LongEdge}/h/{ShortEdge}</td>
+<td>限定缩略图的长边最少为{LongEdge}，短边最少为{ShortEdge}，进行等比缩放，居中裁剪。如果只指定 w 参数或只指定 h 参数，表示长边短边限定为同样的值。同上模式4，但超出限定的矩形部分会被裁剪。</td>
+</tr>
+</tbody></table>
+<p>那么，在代码中，我们就可以进行如下处理：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;img ref=&#123;imgRef&#125; onLoad=&#123;loadSuitableImage&#125; src=<span class="string">"xxx"</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> IMAGE = &#123;</span><br><span class="line">  src: <span class="string">'xxx'</span>,</span><br><span class="line">  width: <span class="number">375</span>,</span><br><span class="line">  height: <span class="number">500</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadMiniImg</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">let</span> miniImg = <span class="string">`<span class="subst">$&#123;src&#125;</span>?imageView2/2/h/<span class="subst">$&#123;height&#125;</span>/q/100!`</span>;</span><br><span class="line">  imgRef.current.src = miniImg;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">loadSuitableImage</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  <span class="keyword">let</span> suitableImg = dpr === <span class="number">3</span> ? src : <span class="string">`<span class="subst">$&#123;src&#125;</span>?imageView2/2/h/<span class="subst">$&#123;height * dpr&#125;</span>/q/100!`</span>;</span><br><span class="line">  imgRef.current.src = suitableImg;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-webp"><a href="#使用-webp" class="headerlink" title="使用 webp"></a>使用 webp</h2><p>WebP 具有更优的图像数据压缩算法，能带来更小的图片体积，而且拥有肉眼识别无差异的图像质量。七牛支持使用 url 参数将图片格式化为 webp，在页面中使用图片时，可以检测浏览器是否支持 webp，如果支持则将 webp 参数加到 url 上。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkWebp</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      !![].map &amp;&amp;</span><br><span class="line">      <span class="built_in">document</span></span><br><span class="line">        .createElement(<span class="string">'canvas'</span>)</span><br><span class="line">        .toDataURL(<span class="string">'image/webp'</span>)</span><br><span class="line">        .indexOf(<span class="string">'data:image/webp'</span>) === <span class="number">0</span></span><br><span class="line">    );</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (checkWebp() &amp;&amp; !ignoreWebp) &#123;</span><br><span class="line">  suitableImg = <span class="string">`<span class="subst">$&#123;suitableImg&#125;</span>?imageMogr2/format/webp`</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要注意的是，某些图片在使用 webp 格式时可能出现问题，此时可以在组件上提供一个参数（ignoreWebp），用来决定是否使用 webp 格式。</p>
+</blockquote>
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>图片瘦身服务（imageslim）在尽可能不影响画质的情况下，将JPEG、PNG格式的图片实时压缩，大幅缩小文件体积，只需要在 url 后缀参数即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//7xkv1q.com1.z0.glb.clouddn.com/grape.jpg?imageslim</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这种方式在实际使用过程中，遇到过图片压缩失败返回原图的情况，可选的方案是先用 tinypng 预先进行压缩，此时可以不加 <code>imageslim</code> 参数。</p>
+</blockquote>
+<h1 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h1><h2 id="搭建一个简单的-K-V-存储项目"><a href="#搭建一个简单的-K-V-存储项目" class="headerlink" title="搭建一个简单的 K-V 存储项目"></a>搭建一个简单的 K-V 存储项目</h2><p>默认 cdn 内存储的内容会缓存 1 年，在七牛后台将浏览器缓存时间修改为 0，缓存刷新时间修改为 0 即可实现类似数据库的存储，可以将 json 数据存储在 cdn 上，同时可以利用 cdn 的分发机制，加速用户的加载。</p>
+<h2 id="使用-script-加速资源加载"><a href="#使用-script-加速资源加载" class="headerlink" title="使用 script 加速资源加载"></a>使用 script 加速资源加载</h2><p>存储 json 数据时，加载一般需要在 react/vue 的静态资源加载完成后进行，此处可以优化为：上传时将 json 数据使用 js 的方式上传，然后在加载静态资源时同步加载对应的 js，这样可以将加载提前，节省加载时间。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn/data.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// data.js 文件内容</span><br><span class="line">;window[document.currentScript.dataset.name||'CDN_DATA']=&#123; data &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="获取视频缩略图"><a href="#获取视频缩略图" class="headerlink" title="获取视频缩略图"></a>获取视频缩略图</h2><p>七牛支持通过参数获取视频的缩略图，可以获取视频中的任意位置，用于优化用户的浏览体验，并且使页面展示更加灵活：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vframe&#x2F;&lt;Format&gt;</span><br><span class="line">      &#x2F;offset&#x2F;&lt;Second&gt;</span><br><span class="line">      &#x2F;w&#x2F;&lt;Width&gt;</span><br><span class="line">      &#x2F;h&#x2F;&lt;Height&gt;</span><br><span class="line">      &#x2F;rotate&#x2F;&lt;Degree&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>{Format}</td>
+<td>是</td>
+<td>输出的目标截图格式，支持jpg、png等。</td>
+</tr>
+<tr>
+<td>/offset/{Second}</td>
+<td>是</td>
+<td>指定截取视频的时刻，单位：秒，精确到毫秒。</td>
+</tr>
+<tr>
+<td>/w/{Width}</td>
+<td>-</td>
+<td>缩略图宽度，单位：像素（px），取值范围为1-3840。只指定w时，h按比例缩放。同时指定时，按照指定w、h缩放。</td>
+</tr>
+<tr>
+<td>/h/{Height}</td>
+<td>-</td>
+<td>缩略图高度，单位：像素（px），取值范围为1-2160。只指定h时，w按比例缩放。同时指定时，按照指定w、h缩放。</td>
+</tr>
+<tr>
+<td>/rotate/{Degree}</td>
+<td>-</td>
+<td>指定顺时针旋转的度数，可取值为90、180、270、auto，默认为不旋转。</td>
+</tr>
+</tbody></table>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/skill/" rel="tag"># skill</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/20/git-release-mode/" rel="prev" title="基于 release 分支的合作开发模式">
+      <i class="fa fa-chevron-left"></i> 基于 release 分支的合作开发模式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/22/react-memo/" rel="next" title="谈谈 react 中的 memo">
+      谈谈 react 中的 memo <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图片处理"><span class="nav-number">1.</span> <span class="nav-text">图片处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设备自适应"><span class="nav-number">1.1.</span> <span class="nav-text">设备自适应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-webp"><span class="nav-number">1.2.</span> <span class="nav-text">使用 webp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片压缩"><span class="nav-number">1.3.</span> <span class="nav-text">图片压缩</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据存储"><span class="nav-number">2.</span> <span class="nav-text">数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建一个简单的-K-V-存储项目"><span class="nav-number">2.1.</span> <span class="nav-text">搭建一个简单的 K-V 存储项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-script-加速资源加载"><span class="nav-number">2.2.</span> <span class="nav-text">使用 script 加速资源加载</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">3.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#获取视频缩略图"><span class="nav-number">3.1.</span> <span class="nav-text">获取视频缩略图</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">xiguaxigua</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/xiguaxigua" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;xiguaxigua" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://codepen.io/xiguaxigua" title="Codepen → https:&#x2F;&#x2F;codepen.io&#x2F;xiguaxigua" rel="noopener" target="_blank"><i class="fa fa-fw fa-codepen"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://segmentfault.com/u/xiguaxigua888" title="SegmentFault → https:&#x2F;&#x2F;segmentfault.com&#x2F;u&#x2F;xiguaxigua888" rel="noopener" target="_blank"><i class="fa fa-fw fa-user"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:xiguaxigua888@gmail.com" title="E-Mail → mailto:xiguaxigua888@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i></a>
+      </span>
+  </div>
+
+
+
+<!-- CloudCalendar 
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;margin-top: 10px;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
+-->
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiguaxigua</span>
+  <a style="display:inline;border:0;" target="_blank" href="https://www.upyun.com/">
+    <img style="display:inline;vertical-align: middle;" src="https://cdno.xiguaxigua.com/upyun.png" width="40" height="20" />
+  </a>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.35/images/core-ut.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.31/images/pisces.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.31/images/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.31/images/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : 'bfdec1ee51075e81b4bc',
+      clientSecret: '7cdb42ded87c6dd5f25e17ccab51e27a38148414',
+      repo        : 'xiguaxigua.github.io',
+      owner       : 'xiguaxigua',
+      admin       : ['xiguaxigua'],
+      id          : '17493ca2b8c98b35c817e619d520fbc1',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
