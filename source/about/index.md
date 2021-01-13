@@ -73,7 +73,7 @@ comments: false
 ## Python
 
 - 《Python编程：从入门到实践》
-- 《Selenium3 自动化测试实战》
+- 《Selenium3 自动化测试实战》 
 
 ## 数据库
 
