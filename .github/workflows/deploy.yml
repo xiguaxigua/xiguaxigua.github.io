@@ -1,7 +1,8 @@
 name: 博客更新
 on:
   push:
-    branch: dev
+    branches:
+      - dev
 
 jobs:
   update-blog:
