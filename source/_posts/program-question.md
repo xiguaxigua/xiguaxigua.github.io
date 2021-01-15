@@ -194,3 +194,29 @@ ee.off("a", handler);
 ee.emit("a", 1); // 不打印
 ```
 
+# 多维数组去重
+
+```js
+function unique(arr, store = []) {
+  let result = [];
+  arr.forEach((item) => {
+    if (Array.isArray(item)) {
+      result.push(unique(item, store));
+    } else {
+      if (!store.includes(item)) {
+        result.push(item);
+        store.push(item);
+      }
+    }
+  });
+  return result;
+}
+
+console.log(
+  JSON.stringify(
+    unique([1, 2, 3, [4, 9, 11, [3, 5, 12, 14]], 4, 5, 6, 7, 8]),
+    null,
+    2
+  )
+);
+```
