@@ -59,7 +59,6 @@ console.log(arrayInclude(a5, a6)); // 0
 const a7 = [4, 2, 3, 1, 4];
 const a8 = [3, 2, 3, 1, 4];
 console.log(arrayInclude(a7, a8)); // -1
-
 ```
 
 
@@ -111,7 +110,6 @@ async function limitFetch(urls, limitNum) {
 limitFetch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3).then((res) => {
   console.log(res);
 });
-
 ```
 
 
@@ -147,4 +145,52 @@ fetchRetry("1");
 
 
 # 观察者模式
+
+```js
+class EventEmitter {
+  constructor() {
+    this.events = {};
+  }
+  on(eventName, handler) {
+    this.events[eventName]
+      ? this.events[eventName].push(handler)
+      : (this.events[eventName] = [handler]);
+  }
+
+  off(eventName, handler) {
+    if (this.events[eventName]) {
+      this.events[eventName] = this.events[eventName].filter((item) => {
+        return item !== handler && item !== handler.realHandler;
+      });
+    }
+  }
+
+  once(eventName, handler) {
+    const wrap = (...args) => {
+      handler(args);
+      this.off(eventName, handler);
+    };
+    wrap.realHandler = handler;
+
+    this.on(eventName, wrap);
+  }
+
+  emit(eventName, ...args) {
+    if (this.events[eventName]) {
+      this.events[eventName].forEach((handler) => {
+        handler(...args);
+      });
+    }
+  }
+}
+
+const ee = new EventEmitter();
+function handler(v) {
+  console.log(v);
+}
+ee.on("a", handler);
+ee.emit("a", 1); // 打印 1
+ee.off("a", handler);
+ee.emit("a", 1); // 不打印
+```
 
