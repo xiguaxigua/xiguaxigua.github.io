@@ -1,7 +1,7 @@
 ---
 title: 面试编程题
 date: 2021-01-15
-category: interval
+category: interview
 tag: program
 ---
 
