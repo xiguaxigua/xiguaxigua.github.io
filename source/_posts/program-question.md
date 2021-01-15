@@ -220,3 +220,39 @@ console.log(
   )
 );
 ```
+
+# 扁平结构转树状结构
+
+```js
+function convert(data, flow) {
+  const result = [];
+  data.forEach((item) => {
+    let target = result.find((sub) => sub.value === item[flow[0]]);
+    if (!target) {
+      target = {
+        value: item[flow[0]],
+        children: [],
+      };
+      result.push(target);
+    }
+    if (flow.length > 1) target.children.push(convert([item], flow.slice(1)));
+  });
+  return result;
+}
+
+const data = [
+  { a: "a1", b: "b1", c: "c1", d: "d1" },
+  { a: "a1", b: "b2", c: "c1", d: "d1" },
+  { a: "a2", b: "b1", c: "c1", d: "d1" },
+  { a: "a3", b: "b1", c: "c1", d: "d1" },
+  { a: "a1", b: "b2", c: "c2", d: "d1" },
+  { a: "a3", b: "b2", c: "c1", d: "d1" },
+  { a: "a4", b: "b1", c: "c2", d: "d1" },
+  { a: "a5", b: "b1", c: "c1", d: "d1" },
+  { a: "a2", b: "b1", c: "c2", d: "d2" },
+  { a: "a5", b: "b1", c: "c1", d: "d2" },
+  { a: "a6", b: "b1", c: "c1", d: "d1" },
+];
+
+console.log(JSON.stringify(convert(data, ["a", "b", "c", "d"]), null, 2));
+```
