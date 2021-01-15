@@ -13,8 +13,8 @@ tag: program
 
 ```js
 function arrayInclude(arrA, arrB) {
-  let arrAMap = {};
   // 遍历 A 数组，生成 A 的数值与数量的对应关系
+  let arrAMap = {};
   arrA.forEach((item) => {
     arrAMap[item] = arrAMap[item] ? ++arrAMap[item] : 1;
   });
@@ -23,12 +23,10 @@ function arrayInclude(arrA, arrB) {
   arrB.forEach((item) => {
     arrAMap[item] = arrAMap[item] ? --arrAMap[item] : -1;
   });
-  // 包含正数值
-  let hasPositive = false;
-  // 包含负数值
-  let hasNegative = false;
 
   // 对 arrAMap 的结果进行分析
+  let hasPositive = false;
+  let hasNegative = false;
   const values = Object.values(arrAMap);
   for (let i = 0; i < values.length; i++) {
     if (values[i] > 0) {
