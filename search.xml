@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>面试编程题</title>
+      <link href="2020/06/24/program-question/"/>
+      <url>2020/06/24/program-question/</url>
+      
+        <content type="html"><![CDATA[<p>本文介绍一些面试过程中常见的非算法编程题</p><a id="more"></a><h1 id="判断数组的包含关系"><a href="#判断数组的包含关系" class="headerlink" title="判断数组的包含关系"></a>判断数组的包含关系</h1><h1 id="请求最大并发数"><a href="#请求最大并发数" class="headerlink" title="请求最大并发数"></a>请求最大并发数</h1><h1 id="请求重试"><a href="#请求重试" class="headerlink" title="请求重试"></a>请求重试</h1><h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> interval </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> program </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>cocos 开发过程中常见的问题及解决方案</title>
       <link href="2020/06/22/cocos-question/"/>
       <url>2020/06/22/cocos-question/</url>
