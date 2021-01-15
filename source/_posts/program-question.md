@@ -65,6 +65,55 @@ console.log(arrayInclude(a7, a8)); // -1
 
 # 请求最大并发数
 
+```js
+function fetch(url) {
+  console.log(`[开始获取数据]: ${url}`);
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(`[返回数据]: ${url}`);
+      resolve(`result: ${url}`);
+    }, Math.random() * 10000);
+  });
+}
+
+async function limitFetch(urls, limitNum) {
+  let count = 0;
+  const len = urls.length;
+  let result = new Array(len).fill(false);
+
+  return new Promise((resolve) => {
+    while (count < limitNum) {
+      next();
+    }
+
+    function next() {
+      let currentCount = count++;
+
+      if (currentCount >= len) {
+        !result.includes(false) && resolve(result);
+        return;
+      }
+
+      fetch(urls[currentCount]).then(
+        (res) => {
+          result[currentCount] = res;
+          if (currentCount < len) next();
+        },
+        (err) => {
+          result[currentCount] = err;
+          if (currentCount < len) next();
+        }
+      );
+    }
+  });
+}
+
+limitFetch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3).then((res) => {
+  console.log(res);
+});
+
+```
+
 
 # 请求重试
 
