@@ -117,6 +117,34 @@ limitFetch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3).then((res) => {
 
 # 请求重试
 
+```js
+function fetch(url) {
+  console.log(`[开始获取数据]: ${url}`);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log(`[返回数据]: ${url}`);
+      reject();
+    }, Math.random() * 5000);
+  });
+}
+
+function fetchRetry(url, retryTimes = 5) {
+  return fetch(url).catch((err) => {
+    if (retryTimes) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(fetchRetry(url, --retryTimes));
+        }, 1000);
+      });
+    } else {
+      throw err;
+    }
+  });
+}
+
+fetchRetry("1");
+```
+
 
 # 观察者模式
 
