@@ -178,7 +178,7 @@ class EventEmitter {
   emit(eventName, ...args) {
     if (this.events[eventName]) {
       this.events[eventName].forEach((handler) => {
-        handler(...args);
+        handler.apply(this, args);
       });
     }
   }
