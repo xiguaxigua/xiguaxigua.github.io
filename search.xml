@@ -29,6 +29,31 @@
     
     
     <entry>
+      <title>二维码的历史与技术细节</title>
+      <link href="2020/08/28/qrcode/"/>
+      <url>2020/08/28/qrcode/</url>
+      
+        <content type="html"><![CDATA[<div /><a id="more"></a><h1 id="历史背景"><a href="#历史背景" class="headerlink" title="历史背景"></a>历史背景</h1><p>从超市说起 -&gt; 条形码 -&gt; 二维码<br><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a3.jpg" alt="原昌宏" /></p><h1 id="如何创建二维码"><a href="#如何创建二维码" class="headerlink" title="如何创建二维码"></a>如何创建二维码</h1><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a4.jpg" alt="" /><h2 id="定位图案"><a href="#定位图案" class="headerlink" title="定位图案"></a>定位图案</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a11.jpg" alt="" /><h2 id="数据码"><a href="#数据码" class="headerlink" title="数据码"></a>数据码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数字编码(Numeric Mode): 只支持数字 0~9 的编码</span><br><span class="line">字符编码(Alphanumeric Mode)：支持包含数字、大写的A-Z(不包含小写)、以及$ % * + – . &#x2F; :和空格</span><br><span class="line">字节编码(Byte Mode): 支持0x00~0xFF内所有的字符</span><br><span class="line">日文编码(Kanji Mode)： 只能支持0x8140~0x9FFC、0xE040~0xEBBF的字符，可以在这里找到</span><br></pre></td></tr></table></figure><p>123456789<br>（123）(456)(789)<br>01010101010 010101100 100100101  11010100<br>数据码+补齐码 236 17 </p><h2 id="纠错码"><a href="#纠错码" class="headerlink" title="纠错码"></a>纠错码</h2><p>解一道数学题：已知 d1 d2 d3 y1 y2， 新增一个数，保证丢失一个数之后这个数可以被恢复</p><p>d1 + d2 + d3 = y1<br>d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a9.jpg" alt="里德、所罗门" /><p>里德所罗门码<br>基于有限域的多项式除法</p><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a1.jpg" alt="伽罗瓦" /><p>数据码加纠错码加补 0<br>01010101101010100000000000011111111111111</p><h2 id="绘制"><a href="#绘制" class="headerlink" title="绘制"></a>绘制</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a6.jpg" alt="" /><h2 id="遮罩"><a href="#遮罩" class="headerlink" title="遮罩"></a>遮罩</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a5.jpg" alt="" /><p>惩罚机制</p><h2 id="绘制格式信息"><a href="#绘制格式信息" class="headerlink" title="绘制格式信息"></a>绘制格式信息</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a10.jpg" alt="" /><h1 id="自定义二维码"><a href="#自定义二维码" class="headerlink" title="自定义二维码"></a>自定义二维码</h1><h2 id="在中间增加图案"><a href="#在中间增加图案" class="headerlink" title="在中间增加图案"></a>在中间增加图案</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a2.jpg" alt="" /><h2 id="在二维码内增加图案"><a href="#在二维码内增加图案" class="headerlink" title="在二维码内增加图案"></a>在二维码内增加图案</h2><blockquote><p><a href="https://qrbtf.com/" target="_blank" rel="noopener">https://qrbtf.com/</a></p></blockquote><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a8.jpg" alt="" /><h2 id="自定义二维码的编解码"><a href="#自定义二维码的编解码" class="headerlink" title="自定义二维码的编解码"></a>自定义二维码的编解码</h2><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a7.jpg" alt="" /><h2 id="动态二维码"><a href="#动态二维码" class="headerlink" title="动态二维码"></a>动态二维码</h2><blockquote><p><a href="https://github.com/divan/txqr" target="_blank" rel="noopener">https://github.com/divan/txqr</a></p></blockquote><img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.54/images/a12.gif" alt="" />]]></content>
+      
+      
+      <categories>
+          
+          <category> qrcode </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> qrcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>cocos 开发过程中的一些技巧</title>
       <link href="2020/06/24/cocos-skill/"/>
       <url>2020/06/24/cocos-skill/</url>
