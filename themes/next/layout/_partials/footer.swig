@@ -40,9 +40,6 @@
     {%- endif %}
     <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, theme.symbols_count_time.awl, theme.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
   {%- endif %}
-  <a style="display:inline;border:0;" target="_blank" href="https://www.upyun.com/">
-    <img style="display:inline;vertical-align: middle;" src="https://cdno.xiguaxigua.com/upyun.png" width="40" height="20" />
-  </a>
 </div>
 
 {%- if theme.footer.powered.enable %}
