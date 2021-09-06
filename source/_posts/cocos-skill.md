@@ -27,7 +27,7 @@ node._touchListener.setSwallowTouches(false)
 
 # 获取图片像素点信息
 
-```
+```js
 const node = new cc.Node();
 node.parent = this.target.node; // 截当前图
 const camera = node.addComponent(cc.Camera);
