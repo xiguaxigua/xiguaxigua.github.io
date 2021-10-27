@@ -13,7 +13,7 @@ comments: false
 
 ## numerify 数值格式工具
 
-> [地址](https://daxigua.me/numerify)
+> [地址](https://xiguaxigua.com/numerify)
 
 简介：主要用来格式化数值，支持通过数值原始值+格式生成目标类型，支持自定义数据格式。
 
