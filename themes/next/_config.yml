@@ -659,8 +659,8 @@ gitalk:
   enable: true
   github_id: xiguaxigua # GitHub repo owner
   repo: xiguaxigua.github.io # Repository name to store issues
-  client_id: bfdec1ee51075e81b4bc # GitHub Application Client ID
-  client_secret: 7cdb42ded87c6dd5f25e17ccab51e27a38148414 # GitHub Application Client Secret
+  client_id: 91a359a35171ed21e8e1 # GitHub Application Client ID
+  client_secret: 54c12d4f34172c4d314bd156f369a17f5ca35ae7 # GitHub Application Client Secret
   admin_user: xiguaxigua # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   pagerDirection: first
