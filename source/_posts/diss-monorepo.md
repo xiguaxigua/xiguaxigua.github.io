@@ -1,5 +1,5 @@
 ---
-title: 为什么我建议滥用 monorepo
+title: 为什么我不建议滥用 monorepo
 date: 2021-11-12
 category: frontend
 tag: monorepo
