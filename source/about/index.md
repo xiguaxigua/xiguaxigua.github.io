@@ -67,8 +67,9 @@ comments: false
 
 - 《JavaScript 高级程序设计》
 - 《ES6 入门教程》
-- 《Javascript 忍者秘籍》
-- 《Javascript 设计模式》
+- 《JavaScript 忍者秘籍》
+- 《JavaScript 设计模式》
+- 《JavaScript 悟道》
 
 ## Python
 
