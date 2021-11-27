@@ -33,9 +33,10 @@ tag: js
 
 {% note primary  %}
 这是我用来提升自己所写代码的“不传之法”：如果一个特性时而有用，时而是个“坑”，并且有更好的选项，那么我们就应该始终选择那个“更好的选项”。
+{% endnote %}
 
 例如 `Object.assign`，通常使用在将多个对象合并为一个对象，但是合并时会将其他对象也合并到第一个对象上，所以尽量不要使用这种方式进行对象合并，而应该使用 `...` 代替。
-{% endnote %}
+
 
 {% note primary  %}
 我认为1的英文拼写是错误的，因此在书中用了自认为更正确的拼写——wun。one这个单词根本不符合任何发音规则，包括各种特殊规则。此外，用一个看着像0的字母作为表示1的单词的首字母，本身就不合适。
@@ -143,3 +144,253 @@ NaN < 7 // false
 !(7 < NaN) === 7 >= NaN // false
 所以，避免使用布尔式犯蠢类型吧，请使用真正的布尔类型。
 {% endnote %}
+
+## 数组
+
+{% note primary  %}
+forEach方法将一个函数作用于数组——它将为数组中的每个元素执行一遍传入的函数。传入的函数可以接收三个参数：element、element_nr和array。element表示当前正在处理的元素。element_nr则是当前元素的序号，以备不时之需。array其实是一个美丽的错误，真的非常多余。有了它，你有时候就会忍不住去修改数组，但修改正在运算中的数组真的不是一个明智的举动。
+{% endnote %}
+
+```js
+const foo = { bar: [1, 2, 3] }
+foo.bar.forEach((item, index, array) => {
+  xxx
+})
+```
+
+{% note primary  %}
+sort
+原地生效：
+- 无法对冻结数组进行排序
+- 对共享性数组（shared array）操作不安全
+sort方法的默认比较函数会将所有比较对象都转成字符串，即便里面的元素都是数,这种“特性”不仅拖慢了性能，而且是一个明显的设计错误！
+{% endnote %}
+
+```js
+let foo = [1, 2, 22, 11]
+foo.sort()
+// [1, 11, 2, 22]
+```
+
+> [JS sort 原理](https://zhuanlan.zhihu.com/p/33626637)
+
+## 对象
+
+{% note primary  %}
+我觉得把hasOwnProperty设计成运算符会好很多，也就不会有陷阱存在了。我甚至觉得没有继承属性会更好，可以直接省去各种麻烦
+{% endnote %}
+
+```js
+var a = {}
+a.hasOwnProperty('b') // false
+var a = { hasOwnProperty : 1 }
+a.hasOwnProperty // 1
+Object.prototype.hasOwnProperty = 2
+var b = {}
+b.hasOwnProperty // 2
+var b = Object.create(null)
+b.hasOwnProperty // undefined
+```
+
+![](https://cdn.jsdelivr.net/npm/figure-bed@0.0.62/images/25d53ff9-0095-4780-aeeb-e9116830feec.png)
+
+{% note primary  %}
+我个人认为，这两种类型用完全不同的语法做相同的事情实在没有意义。更没有意义的是，它们居然不是一种东西。一种只允许字符串作为键名，而另一种居然只允许对象作为键名。就不能好好地设计出一种既支持字符串又支持对象作为键名的类型吗
+{% endnote %}
+
+## 底型
+
+{% note primary  %}
+JavaScript有两种底型：null和undefined。其实NaN也可以算作一种底型，主要用于表示不存在的数值。不过我认为过多底型属于语言设计上的失误。
+
+从一方面看，null和undefined是非常类似的；但从另外一些方面来看，它们的行为又不一样——互有交集，却又无法完全相互替代。有时候，它们的表象一致，但是实际表现不同，这就很容易造成混乱。我们经常不得不花时间决定当下到底该使用哪个底型，这些虚无缥缈的理论又会导致更多混乱，而混乱就是各种bug之源
+
+如果只保留两者之一，程序将更美好。我们虽然不可能改变JavaScript这门编程语言来只留一种底值，但是可以从自身做起，只用一种2。我个人建议淘汰null，只用undefined。
+{% endnote %}
+
+## 语句
+
+{% note primary  %}
+我个人最喜欢的中断语句是return。它会中断函数的运行，并指定返回值。学校教导我们，一个函数只应该有一个return语句。然而我从未见过任何证据表明这种理论是有益的。我认为更有意义的说法应该是在使用return的时候确信目前应当返回，而不是将所有的返回点集中到一处。
+{% endnote %}
+
+## 程序
+
+{% note primary  %}
+我个人推荐在一个源码片段中只写一个export语句，但是可以根据自己的需要写多个import语句。将导入语句写在源码单元的顶部，将导出语句写在底部。
+{% endnote %}
+
+{% note primary  %}
+微观层面的优秀程序取决于良好的编码约定，后者有助于提高优秀代码和不良代码之间的视觉差异，从而使错误更容易被发现。宏观层面的优秀程序则取决于模块设计。优秀的模块高内聚，也就是说，其内在的所有元素都是相关的并在一起完成一件特定的事情；不良的模块则低内聚，组织性极差，总想做很多不同的事情。JavaScript的函数在此就可以体现其强大之处了，我们可以往模块中传入一个函数，使模块不再需要关心处理的特定细节。
+{% endnote %}
+
+## this
+
+{% note primary  %}
+2007年，多个研究性项目尝试开发出JavaScript的安全子集，而其中最大的问题就是this的管理。在方法调用中，this会被绑定到对应的对象上。这种行为有时候是好的，但在其作为函数被调用时，this就会被绑定到全局对象上，这就是一件糟糕的事了。
+
+我建议的方案是完全取消this，因为我认为它既没用又会造成问题。如果将this从JavaScript中移除，JavaScript仍是一门图灵完备的语言。所以，我自身已经开始了去this化的编程方式，这样就可以免受其害了。
+
+我并不是要夺走你的this，只是想让你成为一个无忧无虑的程序员。用“类”写代码的程序员终将走向一片凄迷的“代码坟场”
+{% endnote %}
+
+对 this 的 diss 再一次体现了 道格拉斯 对面向对象编程的反感。
+
+## 非类实例对象
+
+{% note primary  %}
+继承会引起类之间的高耦合。类的更改可能会引起其子类、孙类等的错误。这些类慢慢会变成腐化的“家族”。
+{% endnote %}
+
+![](https://cdn.jsdelivr.net/npm/figure-bed@0.0.62/images/4c7e1bd9-8c03-4070-bdf8-05520f181062.png)
+
+## 尾调用
+
+{% note primary  %}
+优化不仅不应该引入更多错误，还要消除一些错误，成就良好的编程范式。尾调用优化（tail call optimization）就是这样一种优化。很多专家认为这种优化本来就应该存在于日常开发中，而不应该作为一种优化手段。它在规范中被称为正确的尾调用”（proper tail call），所有其他尾调用的实现都是不正确的。
+{% endnote %}
+
+{% note primary  %}
+有了尾调用优化，递归函数就可以跟循环一样快了。这一点很重要，因为循环天生不纯（impure），递归才纯（pure）。有了尾调用优化，递归就克服了它在性能上的缺陷。
+{% endnote %}
+
+尾调用优化当前在 js 里还没有得到比较好的实现，具体细节可以看补充部分。
+
+## 纯度
+
+{% note primary  %}
+纯函数的特性：
+- 极高内聚性
+- 极低的耦合性
+- 容易被测试
+- 拥有强大的组合性
+- 可以保证线程安全、高效
+{% endnote %}
+
+{% note primary  %}
+高纯度显然给我们带来了很多好处。那么可以为语言增加纯度吗？答案是不可以。跟安全性和可靠性一样，纯度并不是一种可以被添加的特性。我们无法增加系统的可靠性，只能消除不可靠性；也无法增加安全性，只能消除不安全性。同理，我们不能增加纯度，只能剔除不纯的内容。不纯的内容就是让我们的函数偏离数学模型上的函数的“病灶”。
+{% endnote %}
+
+{% note primary  %}
+不纯之处
+- 必须丢弃所有的赋值运算符，以及var和let语句，只保留const语句。我们通过const来初始化变量，并且不再改变它的值。
+- 需要丢弃可以修改对象内容的运算符和方法，如delete运算符和Object.assign方法等；还要抛弃可以更改数组内容的方法，如splice和sort等。数组的sort方法本可以是一个纯函数，但因为JavaScript的sort方法会修改原数组，所以它很遗憾地出局了
+- 我们还要抛弃getter和setter。后者显然是引起变化的重要手段，且两者都存在引发副作用的可能。所有副作用都是程序腐化的潜在威胁，必须消除
+- 正则表达式（RegExp）的exec函数会修改lastIndex属性，所以也出局了。该方法本可以不这么设计，但很可惜现在就是如此。
+- for语句的原始意图就是修改归纳变量，所以也要被丢弃。同理，我们还要丢弃while和do。尾递归才是最纯的迭代方式
+- 然后，我们还要弃用Date构造函数。每次调用它都会得到不同的值，这就是不纯的一个表现。同理，我们还应该弃用Math.random，你甚至无法知道它的返回值会是什么
+- 我们必须抛弃用户。人与程序的每次互动都会得到不同的结果。人类可不纯。
+- 最后，切断网线吧。Lambda计算无法表示存在于一台机器上而不存在于另一台机器上的信息，通用图灵机（universal Turingmachine）也不会有Wi-Fi连接。
+{% endnote %}
+
+{% note primary  %}
+我们应该尽可能使程序保持高纯度，因为其带来的好处是真实可见的。但这个世界就是这样的，有时候只有可变的、有状态的对象才能解决我们的问题。既然这些对象必然要存在，我们就应当对其进行设计，严格控制其状态的更改。
+{% endnote %}
+
+## JSON
+
+{% note primary  %}
+标准定义属性名需要以引号包裹。因为我并不想把ES3的保留字列表加到标准中来，这看起来太愚蠢了。我可以预见会有人质疑为什么一定要加引号。答案也很简单，因为JavaScript。我们一直尝试说服人们用JavaScript来开发程序，所以我不想让JSON标准暴露JavaScript的糟粕。如果将所有的属性名用引号包裹起来，这个问题就不存在了，多好
+{% endnote %}
+
+{% note primary  %}
+JavaScript对JSON的支持体现在JSON对象中的两个函数上。这两个函数分别为parse和stringify，它们是我犯下的错误。我学了Date的坏榜样，选用了parse这个名字，之前我们已经讲过这种糟糕的设计了；而我选用stringify的原因是toString看起来不是正确的选择。要是让我再做一次的话，我会选用decode和encode这两个名字。
+{% endnote %}
+
+## 测试
+
+{% note primary  %}
+实际上，面对膨胀的最好办法就是在一开始就避免其发生。在设计和编码时，优先遵循精益软件开发原则。不要在开发中使用那些膨胀的依赖包和信奉膨胀的工具。不要使用类。雇用和组建精干、高素质的开发团队。平时养成多删代码的习惯。在预估开发周期时，务必为删除多余代码、淘汰有问题的依赖包预留时间。当项目中的代码行数日益减少时，我们应当放礼炮庆祝。请遵循最小原则（The Principleof Least Big）
+
+我们用越来越多的测试却找到了越来越少的bug。开发者写测试上瘾，而bug也因此产生了“耐药性”
+
+上述结论听起来挺让人绝望的，但我仍要告诉你测试非常有必要。精良、细致的设计与编码固然重要，但是光有二者还不够，仍然需要进行有效的测试——并且必须进行测试
+{% endnote %}
+
+## 优化
+
+{% note primary  %}
+人们普遍认为每个小优化都是有益的——毕竟积土成山，积水成渊。实际上，这种认知是错误的。我们应当只优化那些有显著成效的地方。挠痒般的优化简直就是浪费时间。优化的目的是节省时间，所以我们必须优化我们的优化。
+大多数优化为代码添加了额外的分支路径，牺牲了代码的通用性。这种行为增大了代码体积，牺牲了可维护性和可充分测试性
+{% endnote %}
+
+例如 `React.useCallback`，我们不应该滥用这个方法，仅在有必要的时候使用，并且使用时需要添加注释。
+
+
+# 补充
+
+## 面向对象带来的问题
+
+- [https://everyday.codes/javascript/please-stop-using-classes-in-javascript/](https://everyday.codes/javascript/please-stop-using-classes-in-javascript/)
+
+- [https://betterprogramming.pub/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7](https://betterprogramming.pub/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7)
+
+![https://cdn.jsdelivr.net/npm/figure-bed@0.0.62/images/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png](https://cdn.jsdelivr.net/npm/figure-bed@0.0.62/images/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png)
+
+“君子不立危墙之下”，为了避免引入 this 的复杂度，在代码设计之初就可以想办法规避
+
+## this
+
+- [https://www.ruanyifeng.com/blog/2018/06/javascript-this.html](https://www.ruanyifeng.com/blog/2018/06/javascript-this.html)
+- [https://juejin.cn/post/6844903746984476686](https://juejin.cn/post/6844903746984476686)
+- [https://github.com/mqyqingfeng/Blog/issues/7](https://github.com/mqyqingfeng/Blog/issues/7)
+
+## 尾调用优化
+
+> [hex 关于尾调用的分享实录](https://v.youku.com/v_show/id_XMjc0NDQ3MDI1Ng==.html?f=49711130&o=0&spm=a2h1n.8251843.playList.5!3~5~A)
+
+### PTC：自动根据语法进行优化
+
+> https://webkit.org/blog/6240/ecmascript-6-proper-tail-calls-in-webkit/
+
+```js
+function sum(n, total = 0) {
+    if (n === 0) {
+        return total;
+    } else {
+        return sum(n - 1, total + n)
+    }
+}
+sum(11000)
+```
+
+问题：
+
+> [V8 团队眼中的 ES6、ES7及未来](https://75.team/post/v8-es6-es7-and-beyond.html)
+
+- 开发者不知道是否书写正确
+- 难调试（Error stack 长 , safari 使用影子堆栈）
+
+```js
+function sum(n, total = 0) {
+    if (n === 1000) throw new Error(1)
+    if (n === 0) {
+        return total;
+    } else {
+        return sum(n - 1, total + n)
+    }
+}
+sum(11000)
+```
+
+### STC：增加语法表示
+
+```js {5}
+function sum(n, total = 0) {
+    if (n === 0) {
+        return total;
+    } else {
+        return continue sum(n - 1, total + n)
+    }
+}
+sum(11000)
+```
+
+解法：
+- 没写对就报错
+- 不给调试
+
+问题：
+- 渐进增强 (try catch 到爆栈为止)
+- 需要维护两套后端（编译到 js target）
+- 苹果反对 https://github.com/tc39/ecma262/issues/535
