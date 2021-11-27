@@ -375,7 +375,7 @@ sum(11000)
 
 ### STC：增加语法表示
 
-```js {5}
+```js
 function sum(n, total = 0) {
     if (n === 0) {
         return total;
