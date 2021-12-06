@@ -48,6 +48,12 @@ comments: false
 
 简介：用于局域网内文件上传场景，开启 app 后会在电脑上启动一个上传服务，其他设备扫码或者访问 app 上显示的网址即可上传。
 
+## git-graph git history 生成器
+
+> [地址](https://github.com/xiguaxigua/git-graph)
+
+简介：便捷的命令式生成 git 历史图。
+
 ## wiki 问题记录
 
 > [地址](https://github.com/xiguaxigua/xiguaxigua.github.io/wiki)
