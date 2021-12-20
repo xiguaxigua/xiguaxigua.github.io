@@ -29,13 +29,6 @@ comments: false
 
 简介：图片无损压缩工具，支持 tinypng 和 imagemin 两种方式。
 
-
-## figure-bed 图床服务
-
-> [地址](https://github.com/xiguaxigua/figure-bed)
-
-简介：通过 github + npm 实现的一款免费的图床工具。
-
 ## demo-block 文档code工具
 
 > [地址](https://github.com/xiguaxigua/vuepress-plugin-demo-block)

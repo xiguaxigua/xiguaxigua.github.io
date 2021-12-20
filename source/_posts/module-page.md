@@ -25,7 +25,7 @@ tag: js
 
 # 整体实现方案
 
-<img alt="实现方案" src="https://unpkg.com/figure-bed@0.0.38/images/flow1.png" style="width:100%;max-width:600px;" />
+<img alt="实现方案" src="https://cdn.xiguaxigua.com/blog/flow1.png" style="width:100%;max-width:600px;" />
 
 为了快速上线进行验证，前端使用 cdn 进行数据存储，此时 cdn 承担了两部分功能：「配置cd」，存储列表、页面数据，用于可视化配置；「页面数据cdn」，存储用户端页面数据，用于渲染页面，控制页面行为和样式。
 
@@ -53,7 +53,7 @@ tag: js
 
 ### 页面样式
 
-<img alt="页面样式" src="https://unpkg.com/figure-bed@0.0.40/images/Xnip2020-04-20_11-39-39.png" style="width:100%;max-width:1000px;" />
+<img alt="页面样式" src="https://cdn.xiguaxigua.com/blog/Xnip2020-04-20_11-39-39.png" style="width:100%;max-width:1000px;" />
 
 ### 权限控制
 
@@ -153,7 +153,7 @@ tag: js
 
 ### 页面样式
 
-<img alt="页面样式" src="https://unpkg.com/figure-bed@0.0.52/images/global.png" style="width:100%;max-width:1000px;" />
+<img alt="页面样式" src="https://cdn.xiguaxigua.com/blog/global.png" style="width:100%;max-width:1000px;" />
 
 ### 数据流
 
@@ -171,9 +171,9 @@ tag: js
 
 ## ab 测试预览的实现方案
 
-<img alt="环境配置" src="https://unpkg.com/figure-bed@0.0.42/images/Xnip2020-04-20_12-09-52.png" style="width:100%;max-width:600px;" />
+<img alt="环境配置" src="https://cdn.xiguaxigua.com/blog/Xnip2020-04-20_12-09-52.png" style="width:100%;max-width:600px;" />
 
-<img alt="组件配置" src="https://unpkg.com/figure-bed@0.0.43/images/Xnip2020-04-20_12-11-37.png" style="width:100%;max-width:450px;" />
+<img alt="组件配置" src="https://cdn.xiguaxigua.com/blog/Xnip2020-04-20_12-11-37.png" style="width:100%;max-width:450px;" />
 
 组件内增加用于控制显隐的配置，环境配置用于在搭建页面的过程中，调试不用 `abName` 的情况下页面的展示情况。
 

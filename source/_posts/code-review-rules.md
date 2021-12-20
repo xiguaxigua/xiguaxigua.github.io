@@ -20,7 +20,7 @@ code review 是技术团队在上线需求前的必经阶段，不同的团队�
 # 时机
 常规的开发流程通常是这样的
 
-![开发流程](https://unpkg.com/figure-bed@0.0.65/images/5.jpg)
+![开发流程](https://cdn.xiguaxigua.com/blog/5.jpg)
 
 - 三次需求评审看似有些重叠，实际上是在为需求的可行性和完整度保驾护航，不合理、无法实现的需求会在这个过程中被剔除，需求不详细的部分会在多次的评审中得以补充
 - 技术评估在需求五稿评审后就可以开始启动了，这个阶段可能会涉及到一些验证性代码的编写
@@ -150,7 +150,7 @@ code review 是技术团队在上线需求前的必经阶段，不同的团队�
 
 ## 分支管理
 
-![分支模型](https://unpkg.com/figure-bed@0.0.64/images/1.png)
+![分支模型](https://cdn.xiguaxigua.com/blog/1.png)
 
 - 个人分支通常从 release 分支中迁出，完成开发后向 release 分支提交 MR
 - 提交 MR 后，通常会有人给你进行评论，此时的修改可以按照内容来提交 commit，也可以直接 amend (amend 的好处是可以将功能聚合到一个 commit 中)
@@ -165,11 +165,11 @@ merge 会让分支结构变得凌乱，不便于进行回滚和 cherry-pick；me
 
 merge 的提交历史
 
-![merge 的提交历史](https://unpkg.com/figure-bed@0.0.64/images/2.png)
+![merge 的提交历史](https://cdn.xiguaxigua.com/blog/2.png)
 
 rebase 的提交历史
 
-![rebase 的提交历史](https://unpkg.com/figure-bed@0.0.64/images/3.png)
+![rebase 的提交历史](https://cdn.xiguaxigua.com/blog/3.png)
 
 ## commit message 规范
 

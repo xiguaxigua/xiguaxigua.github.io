@@ -11,7 +11,7 @@ tag: js
 
 # 作者介绍
 
-![道格拉斯](https://unpkg.com/figure-bed@0.0.61/images/5988271e-08ab-48b4-b450-0b9ca5f0bde8.png)
+![道格拉斯](https://cdn.xiguaxigua.com/blog/5988271e-08ab-48b4-b450-0b9ca5f0bde8.png)
 
 道格拉斯·克罗克福德 （[https://www.crockford.com/](https://www.crockford.com/)）
 
@@ -20,7 +20,7 @@ tag: js
 - 众多JavaScript语言开发工具的创造者，例如JSLint和JSMin
 - 著作：《JavaScript：语言精粹》
 
-![《JavaScript：语言精粹》](https://unpkg.com/figure-bed@0.0.61/images/a8dbf011-081c-4cb1-ac4e-bdc19a9e1a9f.png)
+![《JavaScript：语言精粹》](https://cdn.xiguaxigua.com/blog/a8dbf011-081c-4cb1-ac4e-bdc19a9e1a9f.png)
 
 # 正文部分
 
@@ -192,7 +192,7 @@ var b = Object.create(null)
 b.hasOwnProperty // undefined
 ```
 
-![](https://unpkg.com/figure-bed@0.0.62/images/25d53ff9-0095-4780-aeeb-e9116830feec.png)
+![](https://cdn.xiguaxigua.com/blog/25d53ff9-0095-4780-aeeb-e9116830feec.png)
 
 {% note primary  %}
 我个人认为，这两种类型用完全不同的语法做相同的事情实在没有意义。更没有意义的是，它们居然不是一种东西。一种只允许字符串作为键名，而另一种居然只允许对象作为键名。就不能好好地设计出一种既支持字符串又支持对象作为键名的类型吗
@@ -242,7 +242,7 @@ JavaScript有两种底型：null和undefined。其实NaN也可以算作一种底
 继承会引起类之间的高耦合。类的更改可能会引起其子类、孙类等的错误。这些类慢慢会变成腐化的“家族”。
 {% endnote %}
 
-![](https://unpkg.com/figure-bed@0.0.62/images/4c7e1bd9-8c03-4070-bdf8-05520f181062.png)
+![](https://cdn.xiguaxigua.com/blog/4c7e1bd9-8c03-4070-bdf8-05520f181062.png)
 
 ## 尾调用
 
@@ -325,7 +325,7 @@ JavaScript对JSON的支持体现在JSON对象中的两个函数上。这两个�
 
 - [https://betterprogramming.pub/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7](https://betterprogramming.pub/object-oriented-programming-the-trillion-dollar-disaster-92a4b666c7c7)
 
-![https://unpkg.com/figure-bed@0.0.62/images/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png](https://unpkg.com/figure-bed@0.0.62/images/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png)
+![https://cdn.xiguaxigua.com/blog/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png](https://cdn.xiguaxigua.com/blog/c79eaa2b-2a9a-4dff-aa11-9b58d5628adc.png)
 
 “君子不立危墙之下”，为了避免引入 this 的复杂度，在代码设计之初就可以想办法规避
 

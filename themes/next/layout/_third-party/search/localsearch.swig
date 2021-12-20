@@ -1,1 +1,1 @@
-<script src="https://unpkg.com/figure-bed@0.0.31/images/local-search.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/hexo-blog-assets@0.0.1/local-search.js"></script>
