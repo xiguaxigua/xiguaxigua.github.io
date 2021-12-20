@@ -10,15 +10,15 @@ tag: qrcode
 # 历史背景
 
 从超市说起 -> 条形码 -> 二维码
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a3.jpg" alt="原昌宏" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a3.jpg" alt="原昌宏" />
 
 # 如何创建二维码
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a4.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a4.jpg" alt="" />
 
 ## 定位图案
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a11.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a11.jpg" alt="" />
 
 ## 数据码
 
@@ -41,48 +41,48 @@ tag: qrcode
 d1 + d2 + d3 = y1
 d1 + 2d2 + 4d3 = y2
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a9.jpg" alt="里德、所罗门" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a9.jpg" alt="里德、所罗门" />
 
 里德所罗门码
 基于有限域的多项式除法
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a1.jpg" alt="伽罗瓦" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a1.jpg" alt="伽罗瓦" />
 
 数据码加纠错码加补 0
 01010101101010100000000000011111111111111
 
 ## 绘制
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a6.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a6.jpg" alt="" />
 
 ## 遮罩
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a5.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a5.jpg" alt="" />
 
 惩罚机制
 
 ## 绘制格式信息
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a10.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a10.jpg" alt="" />
 
 # 自定义二维码
 
 ## 在中间增加图案
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a2.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a2.jpg" alt="" />
 
 ## 在二维码内增加图案
 
 > https://qrbtf.com/
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a8.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a8.jpg" alt="" />
 
 ## 自定义二维码的编解码
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.53/images/a7.jpg" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.53/images/a7.jpg" alt="" />
 
 ## 动态二维码
 
 > https://github.com/divan/txqr
 
-<img width="250" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.54/images/a12.gif" alt="" />
+<img width="250" src="https://unpkg.com/figure-bed@0.0.54/images/a12.gif" alt="" />

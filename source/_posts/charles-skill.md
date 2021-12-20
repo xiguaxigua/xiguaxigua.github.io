@@ -17,9 +17,9 @@ charles 作为一款实用性很强的抓包工具，在前端，客户端开发
 
 通常 **map local** 是比较好的解决方案，但是在接口跨域的情况下，这种方式则无法打到目的，此时，可以使用 **map remote** + [mockapp](https://github.com/xiguaxigua/mockapp) 实现。
 
-<img alt="mockapp" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.29/images/mockapp.png" style="width:100%;max-width:400px;border:1px solid #eee;" />
+<img alt="mockapp" src="https://unpkg.com/figure-bed@0.0.29/images/mockapp.png" style="width:100%;max-width:400px;border:1px solid #eee;" />
 
-<img alt="map-remote" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.29/images/map-remote.png" style="width:100%;max-width:200px;border:1px solid #eee;" />
+<img alt="map-remote" src="https://unpkg.com/figure-bed@0.0.29/images/map-remote.png" style="width:100%;max-width:200px;border:1px solid #eee;" />
 
 # 安卓 app 抓 https 接口
 
@@ -40,4 +40,4 @@ charles 作为一款实用性很强的抓包工具，在前端，客户端开发
 # 微信支付调试
 
 微信支付需要在配置的安全域名下，安全域名可配置数量有限，测试环境下可以通过访问可支付域名（比如 a.com），然后将可支付域名的数据 **map remote** 到测试域名下（比如 test.b.com）,此时即可使用测试环境的页面来进行支付了。
-<img alt="sale-map" src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.30/images/sale.png" style="width:100%;max-width:200px;border:1px solid #eee;" />
+<img alt="sale-map" src="https://unpkg.com/figure-bed@0.0.30/images/sale.png" style="width:100%;max-width:200px;border:1px solid #eee;" />

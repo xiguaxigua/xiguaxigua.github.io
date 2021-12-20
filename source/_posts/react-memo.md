@@ -224,7 +224,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 ## vue3 中的解决方案
 
-![vue3 template](https://cdn.jsdelivr.net/npm/figure-bed@0.0.46/images/sc.png)
+![vue3 template](https://unpkg.com/figure-bed@0.0.46/images/sc.png)
 
 根据 vue3 template playground 给出的结果，vue3 中会在模板解析时增加 cache，从而避免了渲染时的问题。从人性化的角度来讲，vue3 “默默”地处理掉这些可能引起性能问题的点，对开发者也更加的友好，而 react 则更需要开发者对原理有更深的了解，从而在解决问题的时候才能更加游刃有余。
 

@@ -18,7 +18,7 @@
     <i class="fa fa-{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
-  <a style="text-decoration: none;border-bottom: none;color: #999;" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"> | 本站由 <img src="https://cdn.jsdelivr.net/npm/figure-bed@0.0.67/images/又拍云_logo5.png" style="display:inline; vertical-align:middle" height="30"><!--提供--> 提供 cdn 加速/云存储服务</a>
+  <a style="text-decoration: none;border-bottom: none;color: #999;" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"> | 本站由 <img src="https://unpkg.com/figure-bed@0.0.67/images/又拍云_logo5.png" style="display:inline; vertical-align:middle" height="30"><!--提供--> 提供 cdn 加速/云存储服务</a>
   {%- if config.symbols_count_time.total_symbols %}
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
