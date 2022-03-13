@@ -40,6 +40,12 @@ const config = {
     ],
   ],
 
+  plugins: [
+    // ['demo-block', {}],
+    ['drawio', {}],
+    ['mindmap', {}],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -57,7 +63,7 @@ const config = {
       },
       footer: {
         style: "dark",
-        copyright: `Copyright © ${new Date().getFullYear()} <a style="text-decoration: none;border-bottom: none;color: #fff;" target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"> | 本站由 <img src="https://cdn.xiguaxigua.com/blog/upyun.png" style="display:inline; vertical-align:middle; position: relative; top: -2px;" height="30">提供 cdn 加速/云存储服务</a>`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a style="text-decoration: none;border-bottom: none;color: #fff;" target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral"> | 本站由 <img src="https://cdn.xiguaxigua.com/blog/upyun.png" style="display:inline; vertical-align:middle; position: relative; top: -2px; height: 30px !important;">提供 cdn 加速/云存储服务</a>`,
       },
       prism: {
         theme: lightCodeTheme,

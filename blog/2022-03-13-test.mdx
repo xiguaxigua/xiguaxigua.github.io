@@ -1,0 +1,23 @@
+---
+sidebar_position: 1
+---
+
+# test plugin
+
+import Mindmap from '@theme/Mindmap';
+
+<Mindmap
+  content={`
+- 前端
+-- HTML
+-- CSS
+-- JS
+--- 闭包
+--- 原型链
+`}
+/>
+
+import Drawio from '@theme/Drawio'
+import simpleGraph from '!!raw-loader!./drawio/demo.drawio';
+
+<Drawio content={simpleGraph} />
