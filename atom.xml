@@ -8,12 +8,12 @@
     <subtitle>xiguaxigua's blog Blog</subtitle>
     <icon>https://blog.xiguaxigua.com/img/favicon-32x32.png</icon>
     <entry>
-        <title type="html"><![CDATA[test plugin]]></title>
+        <title type="html"><![CDATA[测试 demo-block / mindmap / drawio 插件]]></title>
         <id>/2022/03/13/test</id>
         <link href="https://blog.xiguaxigua.com/2022/03/13/test"/>
         <updated>2022-03-13T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<Mindmap]]></summary>
-        <content type="html"><![CDATA[loading...<!-- -->loading...]]></content>
+        <summary type="html"><![CDATA[这篇文档用于展示 demo-block、mindmap、drawio 插件的样式。]]></summary>
+        <content type="html"><![CDATA[<p>这篇文档用于展示 <code>demo-block</code>、<code>mindmap</code>、<code>drawio</code> 插件的样式。</p>loading...<!-- -->loading...<h2 class="anchor anchorWithStickyNavbar_mojV" id="vanilla">vanilla<a class="hash-link" href="#vanilla" title="标题的直接链接">​</a></h2>loading...<h2 class="anchor anchorWithStickyNavbar_mojV" id="vue">vue<a class="hash-link" href="#vue" title="标题的直接链接">​</a></h2>loading...<h2 class="anchor anchorWithStickyNavbar_mojV" id="react">react<a class="hash-link" href="#react" title="标题的直接链接">​</a></h2>loading...]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[code review 规范]]></title>
