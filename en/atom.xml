@@ -2,11 +2,19 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://blog.xiguaxigua.com/en/</id>
     <title>xiguaxigua's blog Blog</title>
-    <updated>2021-12-06T00:00:00.000Z</updated>
+    <updated>2022-03-13T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://blog.xiguaxigua.com/en/"/>
     <subtitle>xiguaxigua's blog Blog</subtitle>
     <icon>https://blog.xiguaxigua.com/en/img/favicon-32x32.png</icon>
+    <entry>
+        <title type="html"><![CDATA[test plugin]]></title>
+        <id>/2022/03/13/test</id>
+        <link href="https://blog.xiguaxigua.com/en/2022/03/13/test"/>
+        <updated>2022-03-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<Mindmap]]></summary>
+        <content type="html"><![CDATA[loading...<!-- -->loading...]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[code review 规范]]></title>
         <id>/2021/12/06/codereview-rules</id>

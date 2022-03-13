@@ -4,9 +4,17 @@
         <title>xiguaxigua's blog Blog</title>
         <link>https://blog.xiguaxigua.com/</link>
         <description>xiguaxigua's blog Blog</description>
-        <lastBuildDate>Mon, 06 Dec 2021 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 13 Mar 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[test plugin]]></title>
+            <link>https://blog.xiguaxigua.com/2022/03/13/test</link>
+            <guid>/2022/03/13/test</guid>
+            <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[<Mindmap]]></description>
+            <content:encoded><![CDATA[loading...<!-- -->loading...]]></content:encoded>
+        </item>
         <item>
             <title><![CDATA[code review 规范]]></title>
             <link>https://blog.xiguaxigua.com/2021/12/06/codereview-rules</link>
