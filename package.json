@@ -19,7 +19,7 @@
     "@docusaurus/preset-classic": "2.0.0-beta.17",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
-    "docusaurus-plugin-demo-block": "^0.2.2",
+    "docusaurus-plugin-demo-block": "^0.3.0",
     "docusaurus-plugin-drawio": "^0.1.5",
     "docusaurus-plugin-mindmap": "^0.1.3",
     "prism-react-renderer": "^1.2.1",

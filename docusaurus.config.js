@@ -41,7 +41,7 @@ const config = {
   ],
 
   plugins: [
-    // ['demo-block', {}],
+    ['demo-block', {}],
     ['drawio', {}],
     ['mindmap', {}],
   ],

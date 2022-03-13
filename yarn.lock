@@ -3675,10 +3675,10 @@ dns-txt@^2.0.2:
   dependencies:
     buffer-indexof "^1.0.0"
 
-docusaurus-plugin-demo-block@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/docusaurus-plugin-demo-block/-/docusaurus-plugin-demo-block-0.2.2.tgz#053f319d1ad179902b0a5d75fb3d5831ba7644db"
-  integrity sha512-lTUcg5NjC09/m055RhPpXJAd8rvsnDhS3T/AN1FxUtQ++Bo34hRdKlPAs//Jjagz+xKOG+JC6LSlMidcF9gCbQ==
+docusaurus-plugin-demo-block@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/docusaurus-plugin-demo-block/-/docusaurus-plugin-demo-block-0.3.0.tgz#cb6917d2884bc5e5aa15150395baa23364af6269"
+  integrity sha512-HX0Gr9nc5ZH3CgdjhJf+QbDFEJ3mLkB8pVype7POPKxd4GKP9XXhuQp0rnn4sffuSpkuzO1T1BZB8y8moT/bng==
   dependencies:
     "@babel/standalone" "^7.17.0"
     codemirror "^5.65.1"

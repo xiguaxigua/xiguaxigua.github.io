@@ -2,7 +2,11 @@
 sidebar_position: 1
 ---
 
-# test plugin
+# 测试 demo-block / mindmap / drawio 插件
+
+这篇文档用于展示 `demo-block`、`mindmap`、`drawio` 插件的样式。
+
+<!-- truncate -->
 
 import Mindmap from '@theme/Mindmap';
 
@@ -21,3 +25,72 @@ import Drawio from '@theme/Drawio'
 import simpleGraph from '!!raw-loader!./drawio/demo.drawio';
 
 <Drawio content={simpleGraph} />
+
+## vanilla
+
+```html vanilla
+<template>
+  <div id="box">box</div>
+</template>
+
+<style>
+  #box {
+    border: 1px solid red;
+  }
+</style>
+
+<script>
+const box = document.getElementById('box');
+</script>
+
+```
+
+## vue
+
+```html vue
+<template>
+  <div id="box">{{ foo }}</div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      foo: "foo"
+    }
+  },
+  created () {
+    console.log('created')
+  }
+}
+</script>
+
+<style>
+#box {
+  border: 1px solid red;
+}
+</style>
+```
+
+## react
+
+```jsx react
+function App () {
+  React.useEffect(() => {
+    console.log('mounted')
+  }, [])
+  return (
+    <div id="box">123</div>
+  )
+}
+
+document.head.innerHTML += `
+<style>
+  #box {
+    border: 1px solid red;
+  }
+</style>
+`
+
+ReactDOM.render(<App />, CONTAINER);
+```
