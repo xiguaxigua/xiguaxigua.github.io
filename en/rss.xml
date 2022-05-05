@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>xiguaxigua's blog Blog</title>
-        <link>https://blog.xiguaxigua.com/en/</link>
+        <link>https://xiguaxigua.com/en/</link>
         <description>xiguaxigua's blog Blog</description>
         <lastBuildDate>Sun, 13 Mar 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
             <title><![CDATA[测试 demo-block / mindmap / drawio 插件]]></title>
-            <link>https://blog.xiguaxigua.com/en/2022/03/13/test</link>
+            <link>https://xiguaxigua.com/en/2022/03/13/test</link>
             <guid>/2022/03/13/test</guid>
             <pubDate>Sun, 13 Mar 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[这篇文档用于展示 demo-block、mindmap、drawio 插件的样式。]]></description>
@@ -17,7 +17,7 @@
         </item>
         <item>
             <title><![CDATA[code review 规范]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/12/06/codereview-rules</link>
+            <link>https://xiguaxigua.com/en/2021/12/06/codereview-rules</link>
             <guid>/2021/12/06/codereview-rules</guid>
             <pubDate>Mon, 06 Dec 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[code review 是技术团队在上线需求前的必经阶段，不同的团队，code review 风格各有不同，本文总结了笔者之前的 code review 经验，形成一套较为详细的规范。]]></description>
@@ -28,7 +28,7 @@ code review 最佳实践收集</li><li>线下会议或讨论群中通常会有�
         </item>
         <item>
             <title><![CDATA[精读 《JavaScript 悟道》]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/11/27/js-wudao</link>
+            <link>https://xiguaxigua.com/en/2021/11/27/js-wudao</link>
             <guid>/2021/11/27/js-wudao</guid>
             <pubDate>Sat, 27 Nov 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[《JavaScript 悟道》是 道格拉斯 对 js 这门语言中精华与糟粕的总结，在经过深度参与 es5 的制定后，慢慢的淡出了 tc39，但是他对 js 的感情还是在这篇文章中显露无疑。本文总结了书中比较精华的部分，并加入了一些个人理解。]]></description>
@@ -48,7 +48,7 @@ sort方法的默认比较函数会将所有比较对象都转成字符串，即�
         </item>
         <item>
             <title><![CDATA[为什么我不建议滥用 monorepo]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/11/12/diss-monorepo</link>
+            <link>https://xiguaxigua.com/en/2021/11/12/diss-monorepo</link>
             <guid>/2021/11/12/diss-monorepo</guid>
             <pubDate>Fri, 12 Nov 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[monorepo 当前在前端圈中已经比较普及了，社区有一些开源解决方案，很多公司也在落地 monorepo，但是很多团队在业务落地的过程中出现对 monorepo 的滥用，这样会带来一系列的问题。]]></description>
@@ -57,7 +57,7 @@ sort方法的默认比较函数会将所有比较对象都转成字符串，即�
         </item>
         <item>
             <title><![CDATA[面向模板生成的 cli 应该如何进行技术设计]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/10/27/cli-for-template</link>
+            <link>https://xiguaxigua.com/en/2021/10/27/cli-for-template</link>
             <guid>/2021/10/27/cli-for-template</guid>
             <pubDate>Wed, 27 Oct 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[在前端开发的过程中，我们经常会用到各种 cli，vue-create、 create-reat-app 等，在业务项目中，面向需要创建多个同类型仓库的需求，也需要开发对应的 cli 工具来实现，本文按照使用流程，介绍 cli 工具的技术设计和相关思考。]]></description>
@@ -67,7 +67,7 @@ sort方法的默认比较函数会将所有比较对象都转成字符串，即�
         </item>
         <item>
             <title><![CDATA[webgl 绘图基础流程]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/02/09/webgl-starter</link>
+            <link>https://xiguaxigua.com/en/2021/02/09/webgl-starter</link>
             <guid>/2021/02/09/webgl-starter</guid>
             <pubDate>Tue, 09 Feb 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[webgl 绘制图形的基本流程：]]></description>
@@ -77,7 +77,7 @@ sort方法的默认比较函数会将所有比较对象都转成字符串，即�
         </item>
         <item>
             <title><![CDATA[面试编程题]]></title>
-            <link>https://blog.xiguaxigua.com/en/2021/01/15/program-question</link>
+            <link>https://xiguaxigua.com/en/2021/01/15/program-question</link>
             <guid>/2021/01/15/program-question</guid>
             <pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[本文介绍一些面试过程中常见的非算法编程题]]></description>
@@ -86,7 +86,7 @@ sort方法的默认比较函数会将所有比较对象都转成字符串，即�
         </item>
         <item>
             <title><![CDATA[二维码的历史与技术细节]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/08/28/qrcode</link>
+            <link>https://xiguaxigua.com/en/2020/08/28/qrcode</link>
             <guid>/2020/08/28/qrcode</guid>
             <pubDate>Fri, 28 Aug 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[from 团队分享]]></description>
@@ -101,7 +101,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[cocos 开发过程中的一些技巧]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/06/24/cocos-skill</link>
+            <link>https://xiguaxigua.com/en/2020/06/24/cocos-skill</link>
             <guid>/2020/06/24/cocos-skill</guid>
             <pubDate>Wed, 24 Jun 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[本文介绍一些在 cocos 开发过程中的实用技巧。]]></description>
@@ -110,7 +110,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[cocos 开发过程中常见的问题及解决方案]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/06/22/cocos-question</link>
+            <link>https://xiguaxigua.com/en/2020/06/22/cocos-question</link>
             <guid>/2020/06/22/cocos-question</guid>
             <pubDate>Mon, 22 Jun 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[本文介绍一些在 cocos creator 开发过程中常见的问题及相应的解决方案。]]></description>
@@ -119,7 +119,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[代码中的坏味道]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/05/04/bad-small.md</link>
+            <link>https://xiguaxigua.com/en/2020/05/04/bad-small.md</link>
             <guid>/2020/05/04/bad-small.md</guid>
             <pubDate>Mon, 04 May 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[节选自《重构2》，我们应该在何时进行重构呢？可以在发现代码中出现了坏味道的地方开始。]]></description>
@@ -129,7 +129,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[谈谈 react 中的 memo]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/04/22/react-memo</link>
+            <link>https://xiguaxigua.com/en/2020/04/22/react-memo</link>
             <guid>/2020/04/22/react-memo</guid>
             <pubDate>Wed, 22 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[从一个性能优化问题，谈一谈关于 react 中的 memo 以及具体场景的应用。]]></description>
@@ -138,7 +138,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[前端如何更好的使用 qiniu]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/04/21/cdn-skill</link>
+            <link>https://xiguaxigua.com/en/2020/04/21/cdn-skill</link>
             <guid>/2020/04/21/cdn-skill</guid>
             <pubDate>Tue, 21 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[提到七牛，前端同学通常想到的是使用七牛存储图片和一些静态资源，用于网络加速，实际上，我们能够利用七牛进行的优化和开发的功能还有很多，本文简单列举几项使用七牛时技巧。]]></description>
@@ -147,7 +147,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[基于 release 分支的合作开发模式]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/04/20/git-release</link>
+            <link>https://xiguaxigua.com/en/2020/04/20/git-release</link>
             <guid>/2020/04/20/git-release</guid>
             <pubDate>Mon, 20 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[关于 git 合作模式，我们比较常听说的是 git flow，但是 git flow 在部分业务开发的场景中并不是很实用，尤其是当业务快速迭代的过程中。本文介绍一种基于 release 分支的合作开发模式，以及记录在实践过程中遇到的问题。]]></description>
@@ -158,7 +158,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[可视化页面配置实现方案]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/04/19/module-page</link>
+            <link>https://xiguaxigua.com/en/2020/04/19/module-page</link>
             <guid>/2020/04/19/module-page</guid>
             <pubDate>Sun, 19 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[在开发面向营销的页面时，通常页面会有如下特点：组件复用率高、页面结构简单、包含一些通用的业务逻辑、上线频繁且紧急；本文介绍一种简单的实现可视化页面配置的方案，用于聚合业务逻辑和视图展现，提高页面的生产效率。]]></description>
@@ -167,7 +167,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[charles 使用过程中的一些技巧]]></title>
-            <link>https://blog.xiguaxigua.com/en/2020/04/14/charles-skill</link>
+            <link>https://xiguaxigua.com/en/2020/04/14/charles-skill</link>
             <guid>/2020/04/14/charles-skill</guid>
             <pubDate>Tue, 14 Apr 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[charles 作为一款实用性很强的抓包工具，在前端，客户端开发，QA 过程中都有较多的使用场景，本文主要介绍一些 charles 的使用技巧，以及常见问题的解决方案。]]></description>
@@ -176,7 +176,7 @@ d1 + 2d2 + 4d3 = y2</p><img width="250" src="https://cdn.xiguaxigua.com/blog/a9.
         </item>
         <item>
             <title><![CDATA[houdini 实战：自定义 checkbox]]></title>
-            <link>https://blog.xiguaxigua.com/en/2018/05/28/houdini</link>
+            <link>https://xiguaxigua.com/en/2018/05/28/houdini</link>
             <guid>/2018/05/28/houdini</guid>
             <pubDate>Mon, 28 May 2018 00:00:00 GMT</pubDate>
             <description><![CDATA[在 html 中使用 checkbox 时，可能会由于默认 checkbox 的样式不符合页面风格，或是在不同浏览器样式不同（例如在设置宽高时样式不统一）而想办法自定义 checkbox。]]></description>
