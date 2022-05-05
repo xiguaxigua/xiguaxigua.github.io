@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "xiguaxigua's blog",
   tagline: "record interesting things",
-  url: "https://blog.xiguaxigua.com",
+  url: "https://xiguaxigua.com/",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
