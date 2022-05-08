@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[175],{5257:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/low-code","name":"low-code","count":1,"permalink":"/tags/low-code"}')}}]);

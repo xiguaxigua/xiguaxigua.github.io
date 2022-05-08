@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[153],{443:function(e){e.exports=JSON.parse('{"allTagsPath":"/tags","slug":"/tags/webgl","name":"webgl","count":1,"permalink":"/tags/webgl"}')}}]);

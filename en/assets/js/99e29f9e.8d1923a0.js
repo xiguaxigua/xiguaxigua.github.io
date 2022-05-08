@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[9555],{239:function(e){e.exports=JSON.parse('{"label":"webgl","permalink":"/en/tags/webgl","allTagsPath":"/en/tags","count":1}')}}]);

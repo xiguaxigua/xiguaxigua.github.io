@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[716],{156:function(e){e.exports=JSON.parse('{"allTagsPath":"/en/tags","slug":"/en/tags/qrcode","name":"qrcode","count":1,"permalink":"/en/tags/qrcode"}')}}]);
