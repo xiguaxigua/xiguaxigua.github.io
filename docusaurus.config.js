@@ -54,7 +54,7 @@ const config = {
         items: [
           { to: "/tags", label: "标签", position: "left" },
           { to: "/about", label: "关于", position: "left" },
-          { to: "/collect", label: "文章收藏", position: "left" },
+          { to: "/collection", label: "文章收藏", position: "left" },
           {
             href: "https://github.com/xiguaxigua",
             label: "GitHub",

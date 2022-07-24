@@ -68,6 +68,9 @@ title: About me
 - 《JavaScript 忍者秘籍》
 - 《JavaScript 设计模式》
 - 《JavaScript 悟道》
+- 《深入浅出 Node.js》
+- 《数据可视化实战：使用 D3 设计交互式图表》
+
 
 ## Python
 
@@ -90,4 +93,6 @@ title: About me
 - 《写给大家看的设计书》
 - 《人人都是产品经理》
 - 《不拘一格》
-
+- 《字节跳动：从0 到 1 的秘密》
+- 《圆圈正义》
+- 《海奥华语言》
